@@ -4,6 +4,7 @@
 \usepackage{graphicx,url}
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
+\usepackage{multirow}
 
 \sloppy
 
@@ -29,7 +30,22 @@ Este artigo é uma melhoria de um trabalho anterior. Trata-se de uma ferramenta 
 
 \section{Introdução} 
 Algumas dificuldades inviabilizam a compreensão da programação desde a abordagem utilizada para o ensino até o aspecto cognitivo do aluno. Segundo \cite{GOMES:2008}, dentre os possíveis fatores deste problema destacam-se o elevado nível de abstração da programação e a falta de motivação do próprio aluno. 
-\par Em um estudo de caso baseado na Taxonomia de Bloom e no Scratch, realizado por \cite{ARAUJO:2013}, percebeu-se a necessidade de incentivo ao aprendizado e do uso de outros recursos visuais como base metodológica. Portanto, modificações na abordagem utilizada durante as aulas de lógica podem torná-las mais interativas e despertar gradativamente o interesse do aluno, apesar das possíveis dificuldades enfrentadas $(?)$.
+\par Existem alguns	 softwares que possibilitam	 a programação visual, como Duinoblocks (2014), Scratch (2013), CodeMonster (2014) e MicroBit (2016), veja tabela 1. Embora os softwares ofereceram recursos básicos da programação, eles não possuem conversão para multilinguagens como a ferramenta proposta possuirá. O Scratch baseia-se apenas na simulação, portanto, não há nenhum código-fonte gerado; CodeMonster, apesar de demonstrar o resultado do código-fonte produzido, conta com falha no armazenamento do progresso do aluno e na interação com o mesmo e, assim como os softwares MicroBit e DuinoBlocks, limita-se na conversão para apenas uma linguagem.
+
+\begin{table}[htb!]
+\caption{Tabela comparativa de \textit{softwares}.} 
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Recursos}                                                                         & \multicolumn{5}{c|}{Softwares}                       \\ \cline{2-6}
+
+                                                                                                  & Scratch & CodeMonster & MicroBit & DuinoBlocks & (?) \\ \hline
+\begin{tabular}[c]{@{}c@{}}Armazenamento\\ do progresso\end{tabular}                              & Sim     & Não         & Sim      & Sim         & Sim \\ \hline
+\begin{tabular}[c]{@{}c@{}}Conversão para uma \\ linguagem de \\ programação\end{tabular}         & Não     & Sim         & Sim      & Sim         & Sim \\ \hline
+\begin{tabular}[c]{@{}c@{}}Conversão para mais \\ de uma linguagem de \\ programação\end{tabular} & Não     & Não         & Não      & Não         & Sim \\ \hline
+\begin{tabular}[c]{@{}c@{}}Recursos básicos\\ de programação\end{tabular}                         & Sim     & Sim         & Sim      & Sim         & Sim \\ \hline
+\end{tabular}
+\end{table}
+
 \par O \textit{software} $(?)$ desenvolvido por $(?)$ dispõe de um ambiente de programação visual baseado em blocos e desenvolvido em Java Swing para ser empregado no aprendizado de lógica de programação, veja Figura~\ref{fig1}. Ele apresenta limitações, tais como: execução limitada a \textit{desktop} e conversão de algoritmo apenas para a linguagem C e para a utilizada pelo Arduino. Objetiva-se neste trabalho uma nova fase de desenvolvimento voltada para a plataforma \textit{web}, com conversão para multilinguagens e com a implementação de novas tecnologias que ampliem as funcionalidades para o público-alvo.
 	\begin{figure}[h]
 		\centering
@@ -52,6 +68,7 @@ Além disso, os blocos visuais e a conversão entre multilinguagens de programa�
 
 \section{Resultados Parciais e Discussão}
 No primeiro bimestre do ano de 2019, o protótipo apresentado na Figura~\ref{fig2} foi disponibilizado em um questionário e aplicado para cerca de 32 alunos do primeiro ano do Curso Técnico Integrado em Informática do $(?)$.
+
 	\begin{figure}[!htbp]
 		\centering
 		\includegraphics[scale=0.5]{g1.png}
