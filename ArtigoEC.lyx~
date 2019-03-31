@@ -1,0 +1,662 @@
+#LyX file created by tex2lyx 2.3
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/daniela/Documentos/Artigo-EasyCode/
+\textclass article
+\begin_preamble
+
+
+\usepackage{sbc-template}
+\usepackage{url}\usepackage[brazil]{babel}
+
+
+\sloppy
+
+\title{(?)\footnote{Omitido para revisão.} : UM AMBIENTE DE TECNOLOGIAS DE APOIO PARA O ENSINO DE LÓGICA DE PROGRAMAÇÃO}
+
+\author{$\textbf{(?)}$ \inst{1}, $\textbf{(?)}$ \inst{1}, $\textbf{(?)}$ \inst{1}, $\textbf{(?)}$ \inst{1}}
+
+\address{$(?)$
+  \email{\{$(?)$, $(?)$,  $(?)$, $(?)$\}@gmail.com}
+}
+
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+maketitle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+
+\lang brazilian
+This article is an improvement on a previous work. It is a tool to aid in the learning process of students in programming logic content. We implement graphic resources on logical structures which facilitate the learning process of the concepts inherent to the initial discipline of the Technical Course in Computer Science. The application is being developed on the web platform and will consist of visual programming based on programming blocks, flowcharts and application of the cognitive domain of the Revised Bloom Taxonomy. It is intended to use gamification resources in order to stimulate students in the study of the discipline and in the best assimilation of the concepts of logic. The prototype was applied to students of the first year of high school, in order to collect information on ease of use and identification of the block structures used in the program. Preliminary results show that the software meets the proposal simply and easily. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{resumo}
+\end_layout
+
+\end_inset
+
+ Este artigo é uma melhoria de um trabalho anterior. Trata-se de uma ferramenta para auxiliar no processo de aprendizagem de estudantes na disciplina de lógica de programação. Para facilitar, utilizou-se representações de recursos gráficos baseados em estruturas lógicas que facilitam o aprendizado dos conceitos inerentes à disciplina inicial do Curso Técnico Integrado em Informática. A aplicação está sendo desenvolvida na plataforma web e consistirá na programação visual com base em blocos de programação, fluxogramas e na aplicação do domínio cognitivo da Taxonomia de Bloom Revisada. Pretende-se utilizar recursos de gamificação a fim de estimular os alunos no estudo da disciplina e na melhor assimilação dos conceitos da lógica. O protótipo foi aplicado para alunos do primeiro ano do ensino médio, com o objetivo de recolher informações sobre facilidade de uso e identificação das estruturas de bloco utilizadas no programa. Os resultados preliminares mostram que o software atende a proposta com simplicidade e facilidade. 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{resumo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Introdução
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Algumas dificuldades inviabilizam a compreensão da programação desde a abordagem utilizada para o ensino até o aspecto cognitivo do aluno. Segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "GOMES:2008"
+literal "false"
+
+\end_inset
+
+, dentre os possíveis fatores deste problema destacam-se o elevado nível de abstração da programação e a falta de motivação do próprio aluno. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Em um estudo de caso baseado na Taxonomia de Bloom e no Scratch, realizado por 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "ARAUJO:2013"
+literal "false"
+
+\end_inset
+
+, percebeu-se a necessidade de incentivo ao aprendizado e do uso de outros recursos visuais como base metodológica. Portanto, modificações na abordagem utilizada durante as aulas de lógica podem torná-las mais interativas e despertar gradativamente o interesse do aluno, apesar das possíveis dificuldades enfrentadas 
+\begin_inset Formula $(?)$
+\end_inset
+
+. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O 
+\shape italic
+software
+\shape default
+ 
+\begin_inset Formula $(?)$
+\end_inset
+
+ desenvolvido por 
+\begin_inset Formula $(?)$
+\end_inset
+
+ dispõe de um ambiente de programação visual baseado em blocos e desenvolvido em Java Swing para ser empregado no aprendizado de lógica de programação, veja Figura
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+. Ele apresenta limitações, tais como: execução limitada a 
+\shape italic
+desktop
+\shape default
+ e conversão de algoritmo apenas para a linguagem C e para a utilizada pelo Arduino. Objetiva-se neste trabalho uma nova fase de desenvolvimento voltada para a plataforma 
+\shape italic
+web
+\shape default
+, com conversão para multilinguagens e com a implementação de novas tecnologias que ampliem as funcionalidades para o público-alvo. 
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename 2017.png
+	scale 40
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Layout
+\shape default
+ da tela principal do ambiente 
+\begin_inset Formula $\textbf{(?)}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig1"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Metodologia
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Utilizar-se-á o domínio cognitivo da Taxonomia de Bloom Revisada, que consiste nas categorias lembrar, entender, aplicar, analisar, avaliar e criar 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "ANDERSON:2001"
+literal "false"
+
+\end_inset
+
+ como atividades que o aluno deve realizar para que seja possível identificar o seu nível de aprendizado na disciplina de lógica. Esta será a base metodológica para a gamificação que será implementada na aplicação, que contará com uma sessão de desafios onde o discente poderá criar fluxogramas ou blocos (veja Figura
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) e converter os códigos produzidos para as linguagens C, C++, Java, JavaScript e Python. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Ademais, a taxonomia em conjunto com pesquisas quanti-qualitativas serão aplicadas para alunos do primeiro ano do ensino médio técnico em informática do 
+\begin_inset Formula $(?)$
+\end_inset
+
+ para avaliar o nível de desenvoltura na resolução de problemas computacionais a partir do 
+\shape italic
+software
+\shape default
+ 
+\begin_inset Formula $(?)$
+\end_inset
+
+. Além disso, os blocos visuais e a conversão entre multilinguagens de programação estão sendo implementados por meio da biblioteca Blockly da Google, permitindo que a ferramenta se torne mais atrativa para qualquer estudante.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename bloc.png
+	scale 30
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Protótipo da tela de montagem de blocos do 
+\begin_inset Formula $\textbf{(?)}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig2"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Resultados Parciais e Discussão
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+No primeiro bimestre do ano de 2019, o protótipo apresentado na Figura
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ foi disponibilizado em um questionário e aplicado para cerca de 32 alunos do primeiro ano do Curso Técnico Integrado em Informática do 
+\begin_inset Formula $(?)$
+\end_inset
+
+. 
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename g1.png
+	scale 50
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráfico relacionado ao 
+\shape italic
+design
+\shape default
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig3"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os resultados coletados e explicitados nos gráficos mostrados denotam que, no primeiro momento, os discentes avaliaram a 
+\shape italic
+interface
+\shape default
+ do 
+\shape italic
+software
+\shape default
+ (Veja Figura
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) e a organização dos blocos de programação (Veja Figura
+\begin_inset space ~
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+). Os alunos fizeram comentários positivos a respeito do protótipo, sugeriram a implementação de um 
+\shape italic
+chat
+\shape default
+ com a turma e apoiaram a ideia da gamificação com base em exercícios de lógica de programação. 
+\begin_inset Float figure
+placement !htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename g2.png
+	scale 50
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráfico em relação à organização dos blocos.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig4"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+As avaliações positivas dos alunos quanto ao protótipo demonstram que os mesmos estão aptos ao uso de novas metodologias de ensino dentro da sala de aula. Com esta expectativa, o 
+\shape italic
+software
+\shape default
+ proposto pode corroborar com o incentivo ao aprendizado de lógica de programação, pois a ferramenta visa atender os requisitos da nova geração de interação usuário-computador.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+Considerações Parciais
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+O 
+\shape italic
+software
+\shape default
+ proposto é um ambiente que visa permitir que alunos com dificuldades de compreensão em lógica de programação possam aprender a programar de maneira mais prática. Espera-se que as mudanças propostas permitam que professores possam demonstrar de forma mais lúdica os conceitos da programação, por exemplo, possibilitando que os alunos compreendam as estruturas lógicas da disciplina. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Optou-se a utilização da plataforma 
+\shape italic
+web
+\shape default
+ devido à maior abrangência de uso do 
+\shape italic
+software
+\shape default
+, pois sem a limitação 
+\shape italic
+desktop
+\shape default
+ haverá disponibilidade de acesso através de qualquer computador com acesso à 
+\shape italic
+internet
+\shape default
+. Além disso, os blocos visuais e os processos dos fluxogramas servem como uma alternativa para instigar o aluno a associar a lógica ao código-fonte de várias linguagens de programação. 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Os próximos passos no andamento do trabalho são a implementação de recursos para a montagem de fluxogramas e, para permitir o engajamento do aluno e fomentar o uso da ferramenta, da gamificação baseada em competições, além da disponibilidade de criação de perfil para o acompanhamento do progresso do aluno. Também serão realizados testes com a ferramenta em sala de aula com o intuito de avaliar a desenvoltura do aluno na resolução de problemas lógicos por meio da aplicação de um questionário após as aulas práticas.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+ 
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ArtigoEC"
+options "sbc"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
